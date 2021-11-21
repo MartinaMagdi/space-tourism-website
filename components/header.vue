@@ -2,7 +2,10 @@
   <div class="header">
     <v-row>
       <v-col>
-        <img class="logo animate__animated animate__slideInLeft" src="../static/shared/icons/logo.svg" />
+        <img
+          class="logo animate__animated animate__slideInLeft"
+          src="../static/shared/icons/logo.svg"
+        />
       </v-col>
       <hr class="display-desktop animate__animated animate__wobble" />
       <v-col>
@@ -12,7 +15,8 @@
               <li v-for="item in headerItems" :key="item.id">
                 <NuxtLink class="remove-link-style" :to="item.url">
                   <span class="item-number">{{ item.number }}</span>
-                  {{ item.name }}</NuxtLink>
+                  {{ item.name }}</NuxtLink
+                >
               </li>
             </ul>
           </div>
@@ -24,13 +28,26 @@
             src="../static/shared/icons/icon-hamburger.svg"
             @click="toggleMenu()"
           />
-          <div id="side-menu" class="side-menu animate__animated animate__slideInRight" v-show="menu" >
-            <img class="close-icon" src="../static/shared/icons/icon-close.svg" @click="toggleMenu()" />
+          <div
+            id="side-menu"
+            class="side-menu animate__animated animate__slideInRight"
+            v-show="menu"
+          >
+            <img
+              class="close-icon"
+              src="../static/shared/icons/icon-close.svg"
+              @click="toggleMenu()"
+            />
             <ul>
-              <li v-for="item in headerItems" :key="item.id" @click="toggleMenu()">
+              <li
+                v-for="item in headerItems"
+                :key="item.id"
+                @click="toggleMenu()"
+              >
                 <NuxtLink class="remove-link-style" :to="item.url">
                   <span class="item-number">{{ item.number }}</span>
-                  {{ item.name }}</NuxtLink>
+                  {{ item.name }}</NuxtLink
+                >
               </li>
             </ul>
           </div>
@@ -49,43 +66,47 @@ export default {
           id: 1,
           number: "00 ",
           name: "HOME",
-          url: "/"
+          url: "/",
         },
         {
           id: 2,
           number: "01 ",
           name: "DESTINATION",
-          url: "/destination"
+          url: "/destination",
         },
         {
           id: 3,
           number: "02 ",
           name: "CREW",
-          url: "/crew"
+          url: "/crew",
         },
         {
           id: 4,
           number: "03 ",
           name: "TECHNOLOGY",
-          url: "/technology"
+          url: "/technology",
         },
       ],
-      menu: false
+      menu: false,
     };
   },
   methods: {
-    toggleMenu(){
-      if(this.menu) {
-        document.getElementById("side-menu").classList.add("animate__slideOutRight")
-          setTimeout(() => {
-            this.menu = !this.menu;
+    toggleMenu() {
+      if (this.menu) {
+        document
+          .getElementById("side-menu")
+          .classList.add("animate__slideOutRight");
+        setTimeout(() => {
+          this.menu = !this.menu;
         }, 1000);
-      } else{
-        document.getElementById("side-menu").classList.remove("animate__slideOutRight");
-        this.menu = !this.menu
+      } else {
+        document
+          .getElementById("side-menu")
+          .classList.remove("animate__slideOutRight");
+        this.menu = !this.menu;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -93,11 +114,11 @@ export default {
 @import "../assets/variables";
 
 .header {
-  .remove-link-style{
+  .remove-link-style {
     color: $third-color;
     text-decoration: unset;
   }
-  .item-number{
+  .item-number {
     font-weight: bold;
   }
   hr {
@@ -130,48 +151,58 @@ export default {
         display: flex;
         list-style: none;
         li {
-          padding: 1em;
+          margin: 1em;
           cursor: pointer;
-        }
-      }
-    }
-  }
-  .mobile {
-      text-align: right;
-      .menu-icon {
-        margin: 2em;
-        cursor: pointer;
-      }
-      .side-menu {
-        height: 100%;
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 100000;
-        background: rgba(255, 255, 255, 0.04);
-        backdrop-filter: blur(81.5485px);
-        text-align: left;
-        width: 70%;
-        padding: 1rem;
-        .close-icon{
-          position: absolute;
-          right: 1.5em;
-          top: 1em;
-          cursor: pointer;
-        }
-        ul {
-          list-style: none;
-          padding: 0;
-          margin-top: 5em;
-          li {
-            cursor: pointer;
-            line-height: 19px;
-            letter-spacing: 2.7px;
-            padding: 1em 0;
+          a {
+            padding-bottom: 1.5em;
+            &:hover {
+              border-bottom: 3px solid #ffffff80;
+            }
           }
         }
       }
     }
+    a.nuxt-link-exact-active {
+      border-bottom: 3px solid $third-color !important;
+      padding-bottom: 1.5em;
+    }
+  }
+  .mobile {
+    text-align: right;
+    .menu-icon {
+      margin: 2em;
+      cursor: pointer;
+    }
+    .side-menu {
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 100000;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(81.5485px);
+      text-align: left;
+      width: 70%;
+      padding: 1rem;
+      .close-icon {
+        position: absolute;
+        right: 1.5em;
+        top: 1em;
+        cursor: pointer;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 5em;
+        li {
+          cursor: pointer;
+          line-height: 19px;
+          letter-spacing: 2.7px;
+          padding: 1em 0;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: $mobiles) and (max-width: $tablets) {
