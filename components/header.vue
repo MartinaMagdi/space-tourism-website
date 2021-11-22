@@ -45,6 +45,7 @@
                 v-for="item in headerItems"
                 :key="item.id"
                 @click="toggleMenu()"
+                class="animate__animated animate__zoomIn"
               >
                 <NuxtLink class="remove-link-style" :to="item.url">
                   <span class="item-number">{{ item.number }}</span>

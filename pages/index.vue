@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <v-row>
-      <v-col cols="12" lg="6">
+      <v-col cols="12" lg="6" class="animate__animated animate__slideInUp">
         <p class="first">SO, YOU WANT TO TRAVEL TO</p>
-        <p class="second">SPACE</p>
+        <p class="second s">SPACE</p>
         <p class="third">
           Let’s face it; if you want to go to space, you might as well genuinely
           go to outer space and not hover kind of on the edge of it. Well sit
@@ -11,7 +11,7 @@
           experience!
         </p>
       </v-col>
-      <v-col cols="12" lg="6" class="right-col">
+      <v-col cols="12" lg="6" class="right-col animate__animated animate__slideInUp">
         <NuxtLink to="/destination">
           <div class="right-side">EXPLORE</div>
         </NuxtLink>
