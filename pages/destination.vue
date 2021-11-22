@@ -204,9 +204,9 @@ export default {
     }
   }
   .v-item-group {
-    background-color: unset;
+    background-color: unset !important;
     .v-card {
-      background-color: unset;
+      background-color: unset !important;
     }
   }
 
