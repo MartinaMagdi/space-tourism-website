@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <v-row>
+    <v-row class="header-row">
       <v-col>
         <NuxtLink to="/">
         <img
@@ -119,6 +119,9 @@ export default {
   font-family: 'Barlow Condensed', sans-serif;
   line-height: 19px;
   letter-spacing: 2.7px;
+  .header-row{
+    width: 100% !important;
+  }
   .remove-link-style {
     color: $third-color;
     text-decoration: unset;
