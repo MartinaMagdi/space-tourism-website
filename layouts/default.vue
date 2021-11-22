@@ -15,6 +15,16 @@ export default {
 <style lang="scss">
 @import '../assets/variables';
 
+::-moz-selection { /* Code for Firefox */
+  background: $second-color;
+  color: $first-color;
+}
+
+::selection {
+  background: $second-color;
+  color: $first-color;
+}
+
 .app{
   background-repeat:no-repeat !important;
   background-position:center center !important;

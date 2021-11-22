@@ -2,10 +2,12 @@
   <div class="header">
     <v-row>
       <v-col>
+        <NuxtLink to="/">
         <img
           class="logo animate__animated animate__slideInLeft"
           src="../static/shared/icons/logo.svg"
         />
+        </NuxtLink>
       </v-col>
       <hr class="display-desktop animate__animated animate__wobble" />
       <v-col>
@@ -114,6 +116,9 @@ export default {
 @import "../assets/variables";
 
 .header {
+  font-family: 'Barlow Condensed', sans-serif;
+  line-height: 19px;
+  letter-spacing: 2.7px;
   .remove-link-style {
     color: $third-color;
     text-decoration: unset;
