@@ -1,11 +1,11 @@
 <template>
   <div class="destination">
     <v-row class="main-row">
-      <p class="title"><span>01</span> Pick your destination</p>
+      <p class="title animate__animated animate__shakeX"><span>01</span> Pick your destination</p>
       <div class="tabs">
         <v-row>
           <v-col cols="12" lg="6"></v-col>
-          <v-col cols="12" lg="6">
+          <v-col class="animate__animated animate__fadeIn" cols="12" lg="6">
             <v-toolbar>
               <template v-slot:extension>
                 <v-tabs color="white" v-model="tab" align-with-title>
@@ -20,7 +20,7 @@
           </v-col>
         </v-row>
 
-        <v-tabs-items v-model="tab">
+        <v-tabs-items v-model="tab" class="animate__animated animate__fadeIn">
           <v-tab-item v-for="item in destination" :key="item.id">
             <v-card flat>
               <v-row class="content-row" no-gutters dense>
@@ -120,7 +120,8 @@ export default {
 @import "../assets/variables";
 .destination {
   height: 100%;
-  padding: 6em 4em;
+  padding: 3em 4em 1em 4em;
+
   .title {
     font-family: "Barlow Condensed", sans-serif !important;
     font-size: 2em !important;
