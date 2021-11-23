@@ -23,9 +23,10 @@
         <v-tabs-items v-model="tab">
           <v-tab-item v-for="item in destination" :key="item.id">
             <v-card flat>
-              <v-row class="content-row">
-                <v-col ols="12" lg="6">
+              <v-row class="content-row" no-gutters dense>
+                <v-col ols="12" lg="6" class="img-container">
                   <img
+                    class="tab-img"
                     :src="
                       require(`~/assets/images/destination/${item.images.png}`)
                     "
@@ -35,7 +36,7 @@
                   <p class="content-title">{{ item.name }}</p>
                   <p class="des">{{ item.description }}</p>
                   <hr class="hr" />
-                  <v-row class="sub-row">
+                  <v-row class="sub-row" no-gutters dense>
                     <v-col cols="12" md="6">
                       <p class="sub-title">AVG. DISTANCE</p>
                       <p class="sub-content">{{ item.distance }}</p>
@@ -173,6 +174,31 @@ export default {
     }
   }
 }
+@media (min-width: 320px) and (max-width: 961px) {
+  /* Mobiles */
+  .destination {
+    padding: 2em;
+    .title {
+      font-size: 1.7em !important;
+    }
+    .content-title {
+      font-size: 5em !important;
+    }
+    .second-col {
+      padding-right: 0;
+      text-align: center;
+    }
+    .tabs {
+      width: 100%;
+    }
+    .img-container {
+      text-align: center;
+      .tab-img {
+        width: 12em;
+      }
+    }
+  }
+}
 </style>
 
 <style lang="scss">
@@ -214,10 +240,10 @@ export default {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     .main-row {
       text-align: center;
-      .title{
+      .title {
         width: 100%;
       }
-      .second-col{
+      .second-col {
         padding: 0 3em;
       }
     }
@@ -229,12 +255,30 @@ export default {
   .app {
     background-image: url("../assets/images/destination/background-destination-mobile.jpg") !important;
   }
+  .v-slide-group__prev {
+    display: none !important;
+  }
+  .v-slide-group__content {
+    justify-content: center !important;
+  }
+  .v-tabs-slider-wrapper {
+    left: 11.5 !important;
+  }
 }
 
 @media (min-width: 961px) and (max-width: 1281px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
   .app {
     background-image: url("../assets/images/destination/background-destination-tablet.jpg") !important;
+  }
+  .v-slide-group__content {
+    justify-content: center !important;
+  }
+  .v-tabs-slider-wrapper {
+    left: 11.5 !important;
+  }
+  .title {
+    text-align: left;
   }
 }
 
