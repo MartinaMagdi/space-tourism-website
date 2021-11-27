@@ -4,13 +4,13 @@
     <v-carousel hide-delimiter-background height="auto">
       <v-carousel-item class="slider" v-for="item in crew" :key="item.id">
         <v-row>
-          <v-col cols="12" lg="6" order-lg="last" class="img-col animate__animated animate__fadeIn">
+          <v-col cols="12" lg="6" order-md="last" order-lg="last" class="img-col animate__animated animate__fadeIn">
             <img
               class="image-content"
               :src="require(`~/assets/images/crew/${item.images.png}`)"
             />
           </v-col>
-          <v-col class="text-col animate__animated animate__fadeIn" cols="12" lg="6" order-lg="first">
+          <v-col class="text-col animate__animated animate__fadeIn" cols="12" lg="6" order-md="first" order-lg="first">
             <p class="first">{{ item.role }}</p>
             <p class="second">{{ item.name }}</p>
             <p class="third">{{ item.bio }}</p>
@@ -157,6 +157,7 @@ export default {
     }
     .third {
       font-size: 1em !important;
+      text-align: center !important;
     }
     .slider {
       padding-bottom: 2em;
@@ -175,6 +176,9 @@ export default {
     .title {
       width: 100%;
       text-align: left;
+    }
+    .third{
+      text-align: center !important;
     }
   }
 }

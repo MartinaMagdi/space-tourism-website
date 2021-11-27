@@ -160,6 +160,7 @@ export default {
     }
     .third {
       font-size: 1em !important;
+      text-align: center !important;
     }
     .slider {
       padding-bottom: 2em;
@@ -179,6 +180,9 @@ export default {
     .title {
       width: 100%;
       text-align: left;
+    }
+    .third{
+      text-align: center !important;
     }
   }
 }

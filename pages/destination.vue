@@ -1,7 +1,9 @@
 <template>
   <div class="destination">
     <v-row class="main-row">
-      <p class="title animate__animated animate__shakeX"><span>01</span> Pick your destination</p>
+      <p class="title animate__animated animate__shakeX">
+        <span>01</span> Pick your destination
+      </p>
       <div class="tabs">
         <v-row>
           <v-col cols="12" lg="6"></v-col>
@@ -218,9 +220,6 @@ export default {
       .v-tab {
         color: $second-color !important;
         margin: 0 !important;
-        &:hover {
-          border-bottom: 0.2em solid $second-color;
-        }
       }
       .v-tab--active {
         color: $third-color !important;
@@ -287,6 +286,11 @@ export default {
   /* hi-res laptops and desktops */
   .app {
     background-image: url("../assets/images/destination/background-destination-desktop.jpg") !important;
+  }
+  .v-tab {
+    &:hover {
+      border-bottom: 0.2em solid $second-color;
+    }
   }
 }
 </style>
