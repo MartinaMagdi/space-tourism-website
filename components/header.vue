@@ -5,6 +5,7 @@
         <NuxtLink to="/">
         <img
           class="logo animate__animated animate__slideInLeft"
+          alt="logo"
           src="../static/shared/icons/logo.svg"
         />
         </NuxtLink>
