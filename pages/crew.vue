@@ -22,6 +22,10 @@
 </template>
 
 <script>
+import crewDesktop from "../assets/images/crew/background-crew-desktop.jpg";
+import crewTablet from "../assets/images/crew/background-crew-tablet.jpg";
+import crewMobile from "../assets/images/crew/background-crew-mobile.jpg";
+
 export default {
   data() {
     return {
@@ -69,6 +73,15 @@ export default {
       ],
     };
   },
+  mounted() {
+    if(this.$device.isDesktop){
+      document.getElementById("app").style.backgroundImage = `url(${crewDesktop})`
+    } else if(this.$device.isTablet) {
+      document.getElementById("app").style.backgroundImage = `url(${crewTablet})`
+    } else {
+      document.getElementById("app").style.backgroundImage = `url(${crewMobile})`
+    }
+  }
 };
 </script>
 
@@ -201,24 +214,5 @@ export default {
     color: $third-color !important;
     opacity: unset !important;
     mix-blend-mode: unset !important;
-}
-
-@media (min-width: 320px) and (max-width: 961px) {
-  /* Mobiles */
-  .app {
-    background-image: url("../assets/images/crew/background-crew-mobile.jpg") !important;
-  }
-}
-@media (min-width: 961px) and (max-width: 1281px) {
-  /* tablet, landscape iPad, lo-res laptops ands desktops */
-  .app {
-    background-image: url("../assets/images/crew/background-crew-tablet.jpg") !important;
-  }
-}
-@media (min-width: 1281px) {
-  /* hi-res laptops and desktops */
-  .app {
-    background-image: url("../assets/images/crew/background-crew-desktop.jpg") !important;
-  }
 }
 </style>

@@ -59,6 +59,10 @@
 </template>
 
 <script>
+import destinationDesktop from "../assets/images/destination/background-destination-desktop.jpg";
+import destinationTablet from "../assets/images/destination/background-destination-tablet.jpg";
+import destinationMobile from "../assets/images/destination/background-destination-mobile.jpg";
+
 export default {
   data() {
     return {
@@ -115,6 +119,15 @@ export default {
       ],
     };
   },
+  mounted() {
+    if(this.$device.isDesktop){
+      document.getElementById("app").style.backgroundImage = `url(${destinationDesktop})`
+    } else if(this.$device.isTablet) {
+      document.getElementById("app").style.backgroundImage = `url(${destinationTablet})`
+    } else {
+      document.getElementById("app").style.backgroundImage = `url(${destinationMobile})`
+    }
+  }
 };
 </script>
 
@@ -252,9 +265,6 @@ export default {
 
 @media (min-width: 320px) and (max-width: 961px) {
   /* Mobiles */
-  .app {
-    background-image: url("../assets/images/destination/background-destination-mobile.jpg") !important;
-  }
   .v-slide-group__prev {
     display: none !important;
   }
@@ -268,9 +278,6 @@ export default {
 
 @media (min-width: 961px) and (max-width: 1281px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
-  .app {
-    background-image: url("../assets/images/destination/background-destination-tablet.jpg") !important;
-  }
   .v-slide-group__content {
     justify-content: center !important;
   }
@@ -284,9 +291,6 @@ export default {
 
 @media (min-width: 1281px) {
   /* hi-res laptops and desktops */
-  .app {
-    background-image: url("../assets/images/destination/background-destination-desktop.jpg") !important;
-  }
   .v-tab {
     &:hover {
       border-bottom: 0.2em solid $second-color;

@@ -36,6 +36,10 @@
 </template>
 
 <script>
+import technologyDesktop from "../assets/images/technology/background-technology-desktop.jpg";
+import technologyTablet from "../assets/images/technology/background-technology-tablet.jpg";
+import technologyMobile from "../assets/images/technology/background-technology-mobile.jpg";
+
 export default {
   data() {
     return {
@@ -72,6 +76,15 @@ export default {
         },
       ],
     };
+  },
+  mounted() {
+    if(this.$device.isDesktop){
+      document.getElementById("app").style.backgroundImage = `url(${technologyDesktop})`
+    } else if(this.$device.isTablet) {
+      document.getElementById("app").style.backgroundImage = `url(${technologyTablet})`
+    } else {
+      document.getElementById("app").style.backgroundImage = `url(${technologyMobile})`
+    }
   },
 };
 </script>
@@ -136,7 +149,7 @@ export default {
   .technology {
     .slider {
       padding-bottom: 5em;
-      margin: 4em 0
+      margin: 4em 0;
     }
   }
 }
@@ -181,7 +194,7 @@ export default {
       width: 100%;
       text-align: left;
     }
-    .third{
+    .third {
       text-align: center !important;
     }
   }
@@ -192,25 +205,6 @@ export default {
 .v-window__next,
 .v-window__prev {
   display: none;
-}
-
-@media (min-width: 320px) and (max-width: 961px) {
-  /* Mobiles */
-  .app {
-    background-image: url("../assets/images/technology/background-technology-mobile.jpg") !important;
-  }
-}
-@media (min-width: 961px) and (max-width: 1281px) {
-  /* tablet, landscape iPad, lo-res laptops ands desktops */
-  .app {
-    background-image: url("../assets/images/technology/background-technology-tablet.jpg") !important;
-  }
-}
-@media (min-width: 1281px) {
-  /* hi-res laptops and desktops */
-  .app {
-    background-image: url("../assets/images/technology/background-technology-desktop.jpg") !important;
-  }
 }
 </style>
 

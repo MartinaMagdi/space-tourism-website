@@ -21,10 +21,23 @@
 </template>
 
 <script>
+import homeDesktop from "../static/shared/background/background-home-desktop.jpg";
+import homeTablet from "../static/shared/background/background-home-tablet.jpg";
+import homeMobile from "../static/shared/background/background-home-mobile.jpg";
+
 export default {
   data() {
     return {};
   },
+  mounted() {
+    if(this.$device.isDesktop){
+      document.getElementById("app").style.backgroundImage = `url(${homeDesktop})`
+    } else if(this.$device.isTablet) {
+      document.getElementById("app").style.backgroundImage = `url(${homeTablet})`
+    } else {
+      document.getElementById("app").style.backgroundImage = `url(${homeMobile})`
+    }
+  }
 };
 </script>
 
